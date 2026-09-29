@@ -1,78 +1,40 @@
-const explorationTypes = ["Drugs", "Proteins", "Genes", "Diseases"] as const;
+import Link from "next/link";
+
+import { AppFooter, AppHeader } from "@/components/shell/app-shell";
+import { SearchForm } from "@/components/search/search-form";
+
+const examples = [
+  { label: "Aspirin", meta: "Compound · PubChem", href: "/compound/2244" },
+  { label: "EGFR", meta: "Protein structures · RCSB", href: "/protein/EGFR" },
+  { label: "Ibuprofen", meta: "Compound · PubChem", href: "/compound/3672" },
+] as const;
 
 export default function Home() {
   return (
     <main className="landing-shell">
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="ambient ambient-two" aria-hidden="true" />
-
-      <nav className="navigation" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="BioVerse AI home">
-          <span className="brand-mark" aria-hidden="true">
-            <span />
-          </span>
-          <span>BIOVERSE</span>
-          <span className="brand-ai">AI</span>
-        </a>
-        <span className="milestone-label">Foundation preview</span>
-      </nav>
-
-      <section id="top" className="hero" aria-labelledby="hero-title">
-        <div className="eyebrow">
-          <span className="eyebrow-dot" aria-hidden="true" />
-          Source-grounded biology exploration
+      <AppHeader />
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-content">
+          <p className="eyebrow"><span aria-hidden="true" />Source-grounded biology exploration</p>
+          <h1 id="hero-title">Explore biology<br /><em>in three dimensions.</em></h1>
+          <p className="hero-copy">Move from real molecules to experimental protein structures through an interface where every displayed scientific fact remains connected to its source.</p>
+          <SearchForm />
+          <div className="example-links" aria-label="Example explorations">
+            <span>Start with</span>
+            {examples.map((example) => <Link href={example.href} key={example.label}><strong>{example.label}</strong><small>{example.meta}</small></Link>)}
+          </div>
         </div>
-
-        <h1 id="hero-title">
-          Explore life,
-          <span> visually.</span>
-        </h1>
-
-        <p className="hero-copy">
-          Move through the relationships that connect molecules, proteins, genes, and disease—with
-          every biological fact traced to an approved scientific source.
-        </p>
-
-        <div className="search-shell" role="search" aria-label="BioVerse search preview">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
-            <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
-          </svg>
-          <label className="sr-only" htmlFor="bioverse-search">
-            Search BioVerse
-          </label>
-          <input
-            id="bioverse-search"
-            type="search"
-            placeholder="Search aspirin, EGFR, breast cancer..."
-            disabled
-          />
-          <button type="button" disabled>
-            Search coming soon
-          </button>
+        <div className="hero-visual" aria-hidden="true">
+          <div className="molecular-field"><i /><i /><i /><i /><i /><i /><b /><b /><b /><span /></div>
+          <p>Visualize real source coordinates</p>
         </div>
-
-        <ul className="entity-list" aria-label="Planned exploration categories">
-          {explorationTypes.map((type) => (
-            <li key={type}>{type}</li>
-          ))}
-        </ul>
       </section>
-
-      <aside className="visual-orbit" aria-hidden="true">
-        <div className="orbit orbit-outer" />
-        <div className="orbit orbit-inner" />
-        <div className="orbital-node node-one" />
-        <div className="orbital-node node-two" />
-        <div className="orbital-node node-three" />
-        <div className="core-sphere">
-          <div />
-        </div>
-      </aside>
-
-      <footer>
-        Educational and research exploration only. Not medical advice.
-      </footer>
+      <section className="capability-strip" aria-label="Current BioVerse capabilities">
+        <div><span>01</span><strong>Compounds</strong><small>PubChem properties and conformers</small></div>
+        <div><span>02</span><strong>Protein structures</strong><small>Experimental RCSB entries</small></div>
+        <div><span>03</span><strong>Traceable facts</strong><small>Field-level provenance</small></div>
+      </section>
+      <AppFooter />
     </main>
   );
 }
-

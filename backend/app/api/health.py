@@ -35,4 +35,3 @@ async def health(
             content=response.model_dump(mode="json"),
         )
     return response
-

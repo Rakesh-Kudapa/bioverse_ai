@@ -1,2 +1,1 @@
 """Validated API boundary schemas."""
-

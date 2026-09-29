@@ -22,4 +22,3 @@ class HealthResponse(BaseModel):
     service: str
     version: str
     components: dict[str, ComponentHealth]
-

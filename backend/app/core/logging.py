@@ -14,7 +14,15 @@ class JsonFormatter(logging.Formatter):
             "logger": record.name,
             "message": record.getMessage(),
         }
-        for field in ("event", "error_type"):
+        for field in (
+            "event",
+            "error_type",
+            "source_adapter",
+            "source_latency_ms",
+            "source_status_code",
+            "operation",
+            "cache_status",
+        ):
             value = getattr(record, field, None)
             if value is not None:
                 payload[field] = value
@@ -28,4 +36,3 @@ def configure_logging(level: str) -> None:
     handler = logging.StreamHandler()
     handler.setFormatter(JsonFormatter())
     logging.basicConfig(level=level.upper(), handlers=[handler], force=True)
-

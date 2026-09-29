@@ -1,0 +1,75 @@
+{
+  "data": {
+    "entry": {
+      "rcsb_id": "1M17",
+      "struct": {
+        "title": "Epidermal Growth Factor Receptor tyrosine kinase domain with 4-anilinoquinazoline inhibitor erlotinib"
+      },
+      "exptl": [{"method": "X-RAY DIFFRACTION"}],
+      "rcsb_entry_info": {
+        "resolution_combined": [2.6],
+        "polymer_entity_count": 1,
+        "nonpolymer_entity_count": 1,
+        "assembly_count": 1
+      },
+      "rcsb_accession_info": {
+        "deposit_date": "2002-06-17T00:00:00Z",
+        "initial_release_date": "2002-09-04T00:00:00Z",
+        "revision_date": "2024-02-14T00:00:00Z"
+      },
+      "pdbx_database_status": {
+        "status_code": "REL",
+        "pdb_format_compatible": "Y"
+      },
+      "polymer_entities": [
+        {
+          "rcsb_id": "1M17_1",
+          "rcsb_polymer_entity": {"pdbx_description": "epidermal growth factor receptor"},
+          "entity_poly": {
+            "rcsb_entity_polymer_type": "Protein",
+            "rcsb_sample_sequence_length": 333,
+            "type": "polypeptide(L)"
+          },
+          "rcsb_polymer_entity_container_identifiers": {
+            "entity_id": "1",
+            "auth_asym_ids": ["A"],
+            "asym_ids": ["A"],
+            "reference_sequence_identifiers": [
+              {"database_name": "UniProt", "database_accession": "P00533"}
+            ]
+          },
+          "rcsb_entity_source_organism": [{"ncbi_scientific_name": "Homo sapiens"}]
+        }
+      ],
+      "nonpolymer_entities": [
+        {
+          "rcsb_id": "1M17_2",
+          "rcsb_nonpolymer_entity_container_identifiers": {
+            "entity_id": "2",
+            "auth_asym_ids": ["A"],
+            "asym_ids": ["B"]
+          },
+          "nonpolymer_comp": {
+            "chem_comp": {
+              "id": "AQ4",
+              "name": "[6,7-BIS(2-METHOXY-ETHOXY)QUINAZOLINE-4-YL]-(3-ETHYNYLPHENYL)AMINE",
+              "formula": "C22 H23 N3 O4",
+              "formula_weight": 393.436,
+              "type": "non-polymer"
+            }
+          }
+        }
+      ],
+      "assemblies": [
+        {
+          "rcsb_id": "1M17-1",
+          "rcsb_assembly_container_identifiers": {"assembly_id": "1"},
+          "pdbx_struct_assembly": {
+            "details": "author_defined_assembly",
+            "method_details": null
+          }
+        }
+      ]
+    }
+  }
+}

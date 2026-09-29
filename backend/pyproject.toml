@@ -9,6 +9,7 @@ description = "BioVerse AI API scaffold"
 requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.115,<1",
+  "httpx>=0.28,<1",
   "psycopg[binary]>=3.2,<4",
   "pydantic-settings>=2.7,<3",
   "sqlalchemy[asyncio]>=2.0,<3",
@@ -17,7 +18,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "httpx>=0.28,<1",
   "mypy>=1.14,<2",
   "pytest>=8.3,<10",
   "pytest-asyncio>=0.25,<2",
@@ -31,6 +31,9 @@ include = ["app*"]
 addopts = "-q"
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = [
+  "live: requires explicit opt-in and access to live scientific APIs",
+]
 
 [tool.ruff]
 line-length = 100

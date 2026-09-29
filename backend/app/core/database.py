@@ -28,4 +28,3 @@ async def check_database_connection() -> bool:
         )
         return False
     return True
-

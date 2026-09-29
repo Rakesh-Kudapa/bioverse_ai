@@ -1,0 +1,55 @@
+{
+  "data": {
+    "entry": {
+      "rcsb_id": "1D3Z",
+      "struct": {"title": "UBIQUITIN NMR STRUCTURE"},
+      "exptl": [{"method": "SOLUTION NMR"}],
+      "rcsb_entry_info": {
+        "resolution_combined": null,
+        "polymer_entity_count": 1,
+        "nonpolymer_entity_count": 0,
+        "assembly_count": 1
+      },
+      "rcsb_accession_info": {
+        "deposit_date": "1999-10-01T00:00:00Z",
+        "initial_release_date": "1999-10-14T00:00:00Z",
+        "revision_date": "2024-05-22T00:00:00Z"
+      },
+      "pdbx_database_status": {
+        "status_code": "REL",
+        "pdb_format_compatible": "Y"
+      },
+      "polymer_entities": [
+        {
+          "rcsb_id": "1D3Z_1",
+          "rcsb_polymer_entity": {"pdbx_description": "PROTEIN (UBIQUITIN)"},
+          "entity_poly": {
+            "rcsb_entity_polymer_type": "Protein",
+            "rcsb_sample_sequence_length": 76,
+            "type": "polypeptide(L)"
+          },
+          "rcsb_polymer_entity_container_identifiers": {
+            "entity_id": "1",
+            "auth_asym_ids": ["A"],
+            "asym_ids": ["A"],
+            "reference_sequence_identifiers": [
+              {"database_name": "UniProt", "database_accession": "P0CG48"}
+            ]
+          },
+          "rcsb_entity_source_organism": [{"ncbi_scientific_name": "Homo sapiens"}]
+        }
+      ],
+      "nonpolymer_entities": null,
+      "assemblies": [
+        {
+          "rcsb_id": "1D3Z-1",
+          "rcsb_assembly_container_identifiers": {"assembly_id": "1"},
+          "pdbx_struct_assembly": {
+            "details": "author_defined_assembly",
+            "method_details": null
+          }
+        }
+      ]
+    }
+  }
+}

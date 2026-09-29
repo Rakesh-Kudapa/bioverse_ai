@@ -1,20 +1,7 @@
-from collections.abc import AsyncIterator
-
-import pytest
-from httpx import ASGITransport, AsyncClient
+from httpx import AsyncClient
 
 from app.core.database import check_database_connection
 from app.main import app
-
-
-@pytest.fixture
-async def client() -> AsyncIterator[AsyncClient]:
-    async with AsyncClient(
-        transport=ASGITransport(app=app),
-        base_url="http://testserver",
-    ) as test_client:
-        yield test_client
-    app.dependency_overrides.clear()
 
 
 async def test_health_returns_ready_when_database_is_available(client: AsyncClient) -> None:
@@ -51,4 +38,3 @@ async def test_health_returns_structured_503_when_database_is_unavailable(
         "version": "0.1.0",
         "components": {"database": {"status": "unavailable"}},
     }
-
